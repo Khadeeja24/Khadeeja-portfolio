@@ -1,4 +1,4 @@
-# Khadeeja Faizan — Portfolio Website
+# Khadeeja — Portfolio Website
 
 A dark, elegant portfolio inspired by MoncyDev/Portfolio-Website, fully customised for Khadeeja's ML/AI profile.
 
