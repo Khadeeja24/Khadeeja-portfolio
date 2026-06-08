@@ -32,7 +32,7 @@ const Landing = () => {
 
           <div className="orb-center">
             <img
-              src="/photo.jpg"
+              src="/photo.jpeg"
               alt="Khadeeja"
               style={{
                 width: "100%",
