@@ -1,0 +1,114 @@
+.whatido-section {
+  padding: 80px 0 120px;
+}
+
+.whatido-inner {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+}
+
+.whatido-header {
+  margin-bottom: 60px;
+}
+
+.whatido-heading {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.whatido-heading span { color: var(--accent); }
+
+.whatido-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  border: 1px solid var(--border);
+}
+
+.whatido-card {
+  padding: 40px;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: background 0.4s ease;
+  background: rgba(194, 164, 255, 0.01);
+}
+
+.whatido-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(194, 164, 255, 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.whatido-card:hover::before { opacity: 1; }
+
+.whatido-card:hover {
+  background: rgba(194, 164, 255, 0.04);
+  border-color: rgba(194, 164, 255, 0.2);
+}
+
+.card-num {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-family: "Geist Mono", monospace;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.whatido-card:hover .card-title { color: var(--accent); }
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 24px;
+  max-width: 400px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-tag {
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  transition: all 0.3s ease;
+  font-family: "Geist Mono", monospace;
+}
+
+.whatido-card:hover .card-tag {
+  border-color: rgba(194, 164, 255, 0.3);
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .whatido-grid { grid-template-columns: 1fr 1fr; }
+  .whatido-heading { font-size: 64px; }
+}
+
+@media (min-width: 1200px) {
+  .whatido-heading { font-size: 80px; }
+}

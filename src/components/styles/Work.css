@@ -1,0 +1,204 @@
+.work-section {
+  padding: 80px 0 120px;
+  overflow: hidden;
+}
+
+.work-header {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: 0 auto 50px;
+}
+
+.work-heading {
+  font-size: 48px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.work-heading span { color: var(--accent); }
+
+.work-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(194,164,255,0.2) transparent;
+  padding-bottom: 20px;
+  cursor: grab;
+}
+
+.work-scroll-wrapper:active { cursor: grabbing; }
+
+.work-scroll-wrapper::-webkit-scrollbar { height: 2px; }
+.work-scroll-wrapper::-webkit-scrollbar-track { background: transparent; }
+.work-scroll-wrapper::-webkit-scrollbar-thumb { background: rgba(194,164,255,0.2); }
+
+.work-flex {
+  display: flex;
+  gap: 20px;
+  padding: 0 calc((100% - min(var(--cWidth), var(--cMaxWidth))) / 2);
+  padding-left: calc((100% - min(94%, 1920px)) / 2);
+  padding-right: 40px;
+  width: max-content;
+}
+
+.work-card {
+  width: 380px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  background: rgba(194, 164, 255, 0.01);
+  cursor: pointer;
+}
+
+.work-card:hover {
+  border-color: rgba(194, 164, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+.work-card-top {
+  height: 220px;
+  background: var(--card-bg, #121015);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-card-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.work-card-num-bg {
+  font-size: 120px;
+  font-weight: 800;
+  color: rgba(194, 164, 255, 0.05);
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+  letter-spacing: -5px;
+}
+
+.work-card-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border: 1px solid rgba(194,164,255,0.15);
+  background: rgba(194,164,255,0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.work-card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11,8,12,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover .work-card-hover-overlay { opacity: 1; }
+
+.work-card-link {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(194,164,255,0.4);
+  padding: 10px 20px;
+  transition: background 0.2s;
+}
+
+.work-card-link:hover { background: rgba(194,164,255,0.1); }
+
+.work-card-body {
+  padding: 24px 28px;
+}
+
+.work-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.work-card-num {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  font-family: "Geist Mono", monospace;
+}
+
+.work-card-year {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  font-family: "Geist Mono", monospace;
+}
+
+.work-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  transition: color 0.3s;
+}
+
+.work-card:hover .work-card-title { color: var(--accent); }
+
+.work-card-cat {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.work-card-tools {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-family: "Geist Mono", monospace;
+}
+
+.work-drag-hint {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: 20px auto 0;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.work-drag-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 200px;
+}
+
+@media (min-width: 768px) {
+  .work-heading { font-size: 64px; }
+}

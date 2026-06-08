@@ -1,0 +1,113 @@
+.contact-section {
+  padding: 100px 0;
+  border-top: 1px solid var(--border);
+}
+
+.contact-inner {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+}
+
+.contact-heading {
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.contact-heading span { color: var(--accent); }
+
+.contact-sub {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 400px;
+  line-height: 1.7;
+  margin-bottom: 60px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.contact-col-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.contact-link-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-link-item:hover {
+  color: var(--text);
+  padding-left: 8px;
+  border-bottom-color: rgba(194,164,255,0.3);
+}
+
+.contact-link-arrow {
+  margin-left: auto;
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.contact-link-item:hover .contact-link-arrow { transform: translate(3px, -3px); }
+
+.contact-big-email {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-big-email a {
+  font-size: clamp(18px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--muted);
+  transition: color 0.3s;
+  word-break: break-all;
+}
+
+.contact-big-email a:hover { color: var(--accent); }
+
+.contact-footer {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: gap;
+  gap: 20px;
+}
+
+.contact-footer-copy {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.contact-footer-credit {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.contact-footer-credit span { color: var(--accent); }
+
+@media (min-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+  .contact-heading { font-size: 72px; }
+}

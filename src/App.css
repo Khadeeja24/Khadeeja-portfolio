@@ -1,0 +1,9 @@
+.app-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}

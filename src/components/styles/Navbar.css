@@ -1,0 +1,82 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--cWidth, 3%);
+  padding-left: calc((100% - min(var(--cWidth, 94%), var(--cMaxWidth))) / 2 + 0px);
+  padding-right: calc((100% - min(var(--cWidth, 94%), var(--cMaxWidth))) / 2 + 0px);
+}
+
+.navbar-logo {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.navbar-logo span { color: var(--accent); }
+
+.navbar-email {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  display: none;
+  transition: color 0.2s;
+}
+
+.navbar-email:hover { color: var(--accent); }
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+}
+
+.header ul li a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+  position: relative;
+}
+
+.header ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.header ul li a:hover {
+  color: var(--text);
+}
+
+.header ul li a:hover::after { width: 100%; }
+
+.nav-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 99;
+}
+
+@media (min-width: 600px) {
+  .navbar-email { display: block; }
+}
