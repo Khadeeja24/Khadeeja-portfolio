@@ -4,8 +4,8 @@
 }
 
 .work-header {
-  width: var(--cWidth);
-  max-width: var(--cMaxWidth);
+  width: 94%;
+  max-width: 1920px;
   margin: 0 auto 50px;
 }
 
@@ -14,189 +14,140 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: #eae5ec;
 }
 
-.work-heading span { color: var(--accent); }
+.work-heading span { color: #c2a4ff; }
 
 .work-scroll-wrapper {
   width: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(194,164,255,0.2) transparent;
   padding-bottom: 20px;
   cursor: grab;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(194,164,255,0.2) transparent;
 }
 
 .work-scroll-wrapper:active { cursor: grabbing; }
-
 .work-scroll-wrapper::-webkit-scrollbar { height: 2px; }
-.work-scroll-wrapper::-webkit-scrollbar-track { background: transparent; }
-.work-scroll-wrapper::-webkit-scrollbar-thumb { background: rgba(194,164,255,0.2); }
+.work-scroll-wrapper::-webkit-scrollbar-thumb { background: rgba(194,164,255,0.3); }
 
 .work-flex {
   display: flex;
-  gap: 20px;
-  padding: 0 calc((100% - min(var(--cWidth), var(--cMaxWidth))) / 2);
-  padding-left: calc((100% - min(94%, 1920px)) / 2);
-  padding-right: 40px;
+  gap: 24px;
+  padding-left: 3%;
+  padding-right: 60px;
   width: max-content;
 }
 
 .work-card {
-  width: 380px;
+  width: 360px;
   flex-shrink: 0;
-  border: 1px solid var(--border);
-  border-radius: 2px;
+  border: 1px solid rgba(194,164,255,0.25);
+  border-radius: 8px;
   overflow: hidden;
-  position: relative;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-  background: rgba(194, 164, 255, 0.01);
+  background: #1c1825;
   cursor: pointer;
+  transition: border-color 0.3s, transform 0.3s;
 }
 
 .work-card:hover {
-  border-color: rgba(194, 164, 255, 0.3);
-  transform: translateY(-4px);
+  border-color: rgba(194,164,255,0.6);
+  transform: translateY(-8px);
 }
 
 .work-card-top {
-  height: 220px;
-  background: var(--card-bg, #121015);
+  height: 200px;
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.work-card-visual {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.work-card-icon-text {
+  font-size: 56px;
   position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
 }
 
 .work-card-num-bg {
-  font-size: 120px;
+  position: absolute;
+  font-size: 100px;
   font-weight: 800;
-  color: rgba(194, 164, 255, 0.05);
-  position: absolute;
-  right: 20px;
-  bottom: -20px;
+  color: rgba(255,255,255,0.04);
+  right: 16px;
+  bottom: -10px;
   line-height: 1;
-  font-family: "Geist", sans-serif;
-  letter-spacing: -5px;
+  letter-spacing: -4px;
 }
-
-.work-card-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  border: 1px solid rgba(194,164,255,0.15);
-  background: rgba(194,164,255,0.05);
-  position: relative;
-  z-index: 2;
-}
-
-.work-card-hover-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(11,8,12,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.work-card:hover .work-card-hover-overlay { opacity: 1; }
-
-.work-card-link {
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(194,164,255,0.4);
-  padding: 10px 20px;
-  transition: background 0.2s;
-}
-
-.work-card-link:hover { background: rgba(194,164,255,0.1); }
 
 .work-card-body {
   padding: 24px 28px;
+  background: #1c1825;
 }
 
 .work-card-meta {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .work-card-num {
   font-size: 11px;
   letter-spacing: 3px;
-  color: var(--muted);
-  font-family: "Geist Mono", monospace;
+  color: rgba(234,229,236,0.5);
+  font-family: monospace;
 }
 
 .work-card-year {
   font-size: 11px;
   letter-spacing: 2px;
-  color: var(--muted);
-  font-family: "Geist Mono", monospace;
+  color: rgba(234,229,236,0.5);
+  font-family: monospace;
 }
 
 .work-card-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   line-height: 1.3;
+  color: #eae5ec;
   transition: color 0.3s;
 }
 
-.work-card:hover .work-card-title { color: var(--accent); }
+.work-card:hover .work-card-title { color: #c2a4ff; }
 
 .work-card-cat {
   font-size: 12px;
-  color: var(--accent);
   letter-spacing: 1px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .work-card-tools {
   font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-  font-family: "Geist Mono", monospace;
+  color: rgba(234,229,236,0.5);
+  line-height: 1.7;
+  font-family: monospace;
 }
 
 .work-drag-hint {
-  width: var(--cWidth);
-  max-width: var(--cMaxWidth);
-  margin: 20px auto 0;
+  width: 94%;
+  margin: 24px auto 0;
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(234,229,236,0.4);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .work-drag-line {
-  flex: 1;
   height: 1px;
-  background: var(--border);
-  max-width: 200px;
+  width: 180px;
+  background: rgba(194,164,255,0.15);
 }
 
 @media (min-width: 768px) {

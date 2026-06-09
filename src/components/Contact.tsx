@@ -1,9 +1,9 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { MdArrowOutward, MdCopyright, MdDownload } from "react-icons/md";
 import "./styles/Contact.css";
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/khadeejafaizan024" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/khadeejafaizan" },
+  { label: "GitHub", href: "https://github.com/Khadeeja24" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/khadeeja2003" },
   { label: "HuggingFace", href: "https://huggingface.co" },
 ];
 
@@ -20,6 +20,11 @@ const Contact = () => {
           interesting projects in AI and data science.
         </p>
 
+        <a href="/resume.pdf" download className="resume-btn">
+          <MdDownload size={18} />
+          Download Resume
+        </a>
+
         <div className="contact-grid">
           <div>
             <p className="contact-col-title">Direct</p>
@@ -32,7 +37,6 @@ const Contact = () => {
               <MdArrowOutward className="contact-link-arrow" />
             </a>
           </div>
-
           <div>
             <p className="contact-col-title">Social</p>
             {socials.map((s) => (
@@ -52,7 +56,7 @@ const Contact = () => {
 
         <div className="contact-footer">
           <p className="contact-footer-copy">
-            <MdCopyright style={{ verticalAlign: "middle" }} /> 2026 Khadeeja Faizan
+            <MdCopyright style={{ verticalAlign: "middle" }} /> 2026 Khadeeja
           </p>
           <p className="contact-footer-credit">
             Designed & Built with <span>♥</span>

@@ -7,44 +7,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px var(--cWidth, 3%);
-  padding-left: calc((100% - min(var(--cWidth, 94%), var(--cMaxWidth))) / 2 + 0px);
-  padding-right: calc((100% - min(var(--cWidth, 94%), var(--cMaxWidth))) / 2 + 0px);
+  padding: 24px 4%;
 }
-
-.navbar-logo {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--text);
-  transition: color 0.2s;
-}
-
-.navbar-logo span { color: var(--accent); }
 
 .navbar-email {
-  font-size: 12px;
-  color: var(--muted);
+  font-size: 13px;
+  color: rgba(234,229,236,0.45);
   letter-spacing: 1px;
-  display: none;
   transition: color 0.2s;
+  display: none;
 }
 
-.navbar-email:hover { color: var(--accent); }
+.navbar-email:hover { color: #c2a4ff; }
 
 .header ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 32px;
+  gap: 40px;
 }
 
 .header ul li a {
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(234,229,236,0.7);
   transition: color 0.2s;
   position: relative;
 }
@@ -52,18 +40,15 @@
 .header ul li a::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent);
+  background: #c2a4ff;
   transition: width 0.3s ease;
 }
 
-.header ul li a:hover {
-  color: var(--text);
-}
-
+.header ul li a:hover { color: #eae5ec; }
 .header ul li a:hover::after { width: 100%; }
 
 .nav-gradient {
@@ -72,7 +57,7 @@
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
+  background: linear-gradient(to bottom, #0b080c 0%, transparent 100%);
   pointer-events: none;
   z-index: 99;
 }

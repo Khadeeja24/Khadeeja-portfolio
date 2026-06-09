@@ -9,33 +9,29 @@ import Career from "./components/Career";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Cursor from "./components/Cursor";
-import Loading from "./components/Loading";
 
 const App = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 2200);
+    const timer = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
+    <div style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.5s ease" }}>
       <Cursor />
-      {!loaded && <Loading />}
-      <div className="app-wrapper" style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.6s ease" }}>
-        <Navbar />
-        <main className="main-content">
-          <Landing />
-          <About />
-          <WhatIDo />
-          <TechStack />
-          <Career />
-          <Work />
-          <Contact />
-        </main>
-      </div>
-    </>
+      <Navbar />
+      <main>
+        <Landing />
+        <About />
+        <WhatIDo />
+        <TechStack />
+        <Career />
+        <Work />
+        <Contact />
+      </main>
+    </div>
   );
 };
 

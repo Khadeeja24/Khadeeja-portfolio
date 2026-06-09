@@ -1,104 +1,55 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, useEffect } from "react";
 import "./styles/Work.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    num: "01",
-    year: "2026",
+    num: "01", year: "2026",
     title: "Multimodal Fake Review Detection",
-    cat: "Deep Learning · Computer Vision · NLP",
-    tools: "BERT · ViT · TensorFlow · Cross-Modal Attention · GNN",
-    icon: "🔍",
-    accent: "#8b5cf6",
-    github: "https://github.com",
-    demo: "https://huggingface.co",
+    cat: "Deep Learning · NLP · Computer Vision",
+    tools: "BERT · ViT · TensorFlow · GNN · HuggingFace",
+    icon: "🔍", color: "#8b5cf6",
   },
   {
-    num: "02",
-    year: "2026",
+    num: "02", year: "2026",
     title: "Conversational AI Lead Gen Agent",
     cat: "GenAI · LLMs · Agentic Systems",
-    tools: "LangChain · LangGraph · FAISS · Sentence Transformers · Groq API · Flask",
-    icon: "🤖",
-    accent: "#06b6d4",
-    github: "https://github.com",
-    demo: "",
+    tools: "LangChain · LangGraph · FAISS · Flask · Groq",
+    icon: "🤖", color: "#06b6d4",
   },
   {
-    num: "03",
-    year: "2025",
+    num: "03", year: "2025",
     title: "Parkinson's Disease Detection",
     cat: "Healthcare AI · Multi-Model ML",
-    tools: "XGBoost · ANN · TensorFlow/Keras · SMOTE · Python",
-    icon: "🧠",
-    accent: "#10b981",
-    github: "https://github.com",
-    demo: "",
+    tools: "XGBoost · ANN · Keras · SMOTE · Python",
+    icon: "🧠", color: "#10b981",
   },
   {
-    num: "04",
-    year: "2024",
-    title: "Social Media & Student Mental Health",
-    cat: "Statistical Research · Survey Analysis",
-    tools: "R · Hypothesis Testing · Stratified Sampling · Chi-Square · t-tests",
-    icon: "📊",
-    accent: "#f59e0b",
-    github: "https://github.com",
-    demo: "",
+    num: "04", year: "2024",
+    title: "Social Media & Mental Health Study",
+    cat: "Statistics · Research",
+    tools: "R · Hypothesis Testing · Chi-Square · Survey Design",
+    icon: "📊", color: "#f59e0b",
   },
 ];
 
 const Work = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
-    gsap.from(sectionRef.current.querySelectorAll(".work-card"), {
-      opacity: 0,
-      y: 30,
-      stagger: 0.12,
-      duration: 0.7,
-      ease: "power2.out",
-      scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
-    });
-
-    // Drag-to-scroll
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    const onDown = (e: MouseEvent) => {
-      isDown = true;
-      startX = e.pageX - wrapper.offsetLeft;
-      scrollLeft = wrapper.scrollLeft;
-    };
+    let isDown = false, startX = 0, scrollLeft = 0;
+    const onDown = (e: MouseEvent) => { isDown = true; startX = e.pageX - wrapper.offsetLeft; scrollLeft = wrapper.scrollLeft; };
     const onUp = () => { isDown = false; };
-    const onMove = (e: MouseEvent) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - wrapper.offsetLeft;
-      wrapper.scrollLeft = scrollLeft - (x - startX);
-    };
-
+    const onMove = (e: MouseEvent) => { if (!isDown) return; e.preventDefault(); wrapper.scrollLeft = scrollLeft - (e.pageX - wrapper.offsetLeft - startX); };
     wrapper.addEventListener("mousedown", onDown);
     window.addEventListener("mouseup", onUp);
     wrapper.addEventListener("mousemove", onMove);
-    return () => {
-      wrapper.removeEventListener("mousedown", onDown);
-      window.removeEventListener("mouseup", onUp);
-      wrapper.removeEventListener("mousemove", onMove);
-    };
+    return () => { wrapper.removeEventListener("mousedown", onDown); window.removeEventListener("mouseup", onUp); wrapper.removeEventListener("mousemove", onMove); };
   }, []);
 
   return (
-    <section className="work-section" id="work" ref={sectionRef}>
+    <section className="work-section" id="work">
       <div className="work-header">
         <p className="title">Selected Projects</p>
         <h2 className="work-heading">My <span>Work</span></h2>
@@ -107,21 +58,9 @@ const Work = () => {
         <div className="work-flex">
           {projects.map((p) => (
             <div className="work-card" key={p.num}>
-              <div
-                className="work-card-top"
-                style={{ "--card-bg": `${p.accent}18` } as React.CSSProperties}
-              >
-                <div className="work-card-visual">
-                  <div className="work-card-num-bg">{p.num}</div>
-                  <div className="work-card-icon" style={{ borderColor: `${p.accent}30`, background: `${p.accent}10` }}>
-                    {p.icon}
-                  </div>
-                </div>
-                <div className="work-card-hover-overlay">
-                  <a href={p.github} target="_blank" rel="noopener" className="work-card-link">
-                    View Project
-                  </a>
-                </div>
+              <div className="work-card-top" style={{ background: `${p.color}22` }}>
+                <span className="work-card-icon-text">{p.icon}</span>
+                <span className="work-card-num-bg">{p.num}</span>
               </div>
               <div className="work-card-body">
                 <div className="work-card-meta">
@@ -129,7 +68,7 @@ const Work = () => {
                   <span className="work-card-year">{p.year}</span>
                 </div>
                 <h3 className="work-card-title">{p.title}</h3>
-                <p className="work-card-cat">{p.cat}</p>
+                <p className="work-card-cat" style={{ color: p.color }}>{p.cat}</p>
                 <p className="work-card-tools">{p.tools}</p>
               </div>
             </div>

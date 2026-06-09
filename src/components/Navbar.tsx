@@ -10,7 +10,6 @@ const Navbar = () => {
     <>
       <div className="nav-gradient"></div>
       <header className="header">
-        <a href="/" className="navbar-logo">KF<span>.</span></a>
         <a href="mailto:khadeejafaizan024@gmail.com" className="navbar-email">
           khadeejafaizan024@gmail.com
         </a>

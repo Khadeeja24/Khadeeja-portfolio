@@ -1,7 +1,6 @@
 .techstack-section {
   padding: 80px 0;
   overflow: hidden;
-  position: relative;
 }
 
 .techstack-inner {
@@ -10,8 +9,6 @@
   margin: auto;
   margin-bottom: 50px;
 }
-
-.techstack-inner .title { margin-bottom: 8px; }
 
 .techstack-heading {
   font-size: 40px;
@@ -23,14 +20,24 @@
 .techstack-heading span { color: var(--accent); }
 
 .marquee-wrapper {
-  position: relative;
-  margin-top: 50px;
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 
-.marquee-row {
+.marquee-track {
   display: flex;
-  gap: 0;
-  margin-bottom: 16px;
+  gap: 16px;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-reverse .marquee-track {
+  animation-direction: reverse;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .tech-pill {
@@ -39,17 +46,13 @@
   gap: 10px;
   padding: 14px 28px;
   border: 1px solid var(--border);
-  border-radius: 0;
-  margin-right: 16px;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  background: rgba(194, 164, 255, 0.01);
   flex-shrink: 0;
+  transition: border-color 0.3s ease;
 }
 
 .tech-pill:hover {
   border-color: rgba(194, 164, 255, 0.4);
-  background: rgba(194, 164, 255, 0.06);
 }
 
 .tech-pill-dot {
@@ -58,14 +61,12 @@
   border-radius: 50%;
   background: var(--accent);
   opacity: 0.5;
-  flex-shrink: 0;
 }
 
 .tech-pill-name {
   font-size: 13px;
   letter-spacing: 1px;
   font-family: "Geist Mono", monospace;
-  color: var(--text);
 }
 
 .tech-pill-cat {

@@ -1,9 +1,4 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/About.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const certs = [
   { icon: "IBM", name: "Data Analysis with Python", issuer: "IBM · Cognitive Class" },
@@ -14,25 +9,8 @@ const certs = [
 ];
 
 const About = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    gsap.from(sectionRef.current.querySelectorAll(".about-heading, .about-text, .stat-item, .cert-item"), {
-      opacity: 0,
-      y: 30,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-      },
-    });
-  }, []);
-
   return (
-    <section className="about-section" id="about" ref={sectionRef}>
+    <section className="about-section" id="about">
       <div className="about-inner">
         <div className="about-left">
           <p className="title">About Me</p>
@@ -45,9 +23,7 @@ const About = () => {
             experience building machine learning systems, deep learning models, NLP
             pipelines, and GenAI agents. Currently a Research Intern at the Insight
             Centre for Data Analytics, University of Galway, developing multi-agent
-            AI frameworks for skin disease diagnosis using VLMs, RAG, and memory-based
-            reasoning. Comfortable working across the full stack — from raw data to
-            deployed products.
+            AI frameworks for skin disease diagnosis.
           </p>
           <div className="about-stats">
             <div className="stat-item">
@@ -64,7 +40,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
         <div className="about-right">
           <p className="about-certs-title">Certifications</p>
           <div className="about-certs">
