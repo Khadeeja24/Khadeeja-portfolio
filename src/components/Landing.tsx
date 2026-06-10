@@ -24,7 +24,7 @@ const Landing = () => {
           ))}
           <div className="orb-center">
             <div className="orb-scan"></div>
-            <img src="/photo.jpeg" alt="Khadeeja" />
+            <img src="/photo.png" alt="Khadeeja" />
           </div>
         </div>
       </div>
