@@ -153,3 +153,39 @@
 @media (min-width: 768px) {
   .work-heading { font-size: 64px; }
 }
+/* ---- project card links ---- */
+.work-card-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.work-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.work-card-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.work-card-note {
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: rgba(234, 229, 236, 0.4);
+  font-style: italic;
+}

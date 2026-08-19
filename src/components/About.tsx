@@ -19,15 +19,17 @@ const About = () => {
             <br />systems that matter
           </h2>
           <p className="about-text">
-            Data Science graduate student at Aligarh Muslim University with hands-on
+            Data Science postgraduate from Aligarh Muslim University with hands-on
             experience building machine learning systems, deep learning models, NLP
-            pipelines, and GenAI agents. Currently a Research Intern at the Insight
-            Centre for Data Analytics, University of Galway, developing multi-agent
-            AI frameworks for skin disease diagnosis.
+            pipelines, and GenAI agents. Currently an AI Intern at Star Software,
+            evaluating multimodal LLM document extraction pipelines. Previously a
+            Research Intern at the Insight Centre for Data Analytics, University of
+            Galway, where I architected a multi-agent framework for skin disease
+            diagnosis.
           </p>
           <div className="about-stats">
             <div className="stat-item">
-              <div className="stat-num">4+</div>
+              <div className="stat-num">6+</div>
               <div className="stat-label">Projects</div>
             </div>
             <div className="stat-item">

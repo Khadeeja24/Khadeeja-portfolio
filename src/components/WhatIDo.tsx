@@ -2,24 +2,24 @@ import "./styles/WhatIDo.css";
 
 const cards = [
   {
-    num: "01", title: "Machine Learning",
-    desc: "Building end-to-end ML pipelines from feature engineering to deployment — CNNs, GNNs, ensemble methods, and custom neural architectures.",
-    tags: ["Scikit-Learn", "TensorFlow", "XGBoost", "CNN", "ResNet-50", "SMOTE"],
+    num: "01", title: "Agentic AI",
+    desc: "Designing multi-agent systems that plan, act, and verify — orchestrated graphs with shared memory, tool use, and ReAct reasoning loops.",
+    tags: ["LangGraph", "ReAct", "Multi-Agent", "Tool Calling", "Groq LLaMA"],
   },
   {
-    num: "02", title: "NLP & GenAI",
-    desc: "Designing LLM-powered systems, RAG pipelines, and multi-agent workflows for healthcare, e-commerce, and conversational AI.",
-    tags: ["BERT", "LangChain", "LangGraph", "FAISS", "RAG", "VLMs"],
+    num: "02", title: "RAG & Retrieval",
+    desc: "Building retrieval pipelines over large document sets — hybrid keyword and vector search, embedding models, and grounded generation.",
+    tags: ["LangChain", "FAISS", "BM25", "Sentence Transformers", "RAG"],
   },
   {
-    num: "03", title: "Data Analysis",
-    desc: "Transforming raw data into decisions through statistical analysis, hypothesis testing, visualisation, and reporting.",
-    tags: ["Pandas", "R", "Tableau", "Power BI", "PCA", "Feature Engineering"],
+    num: "03", title: "Machine Learning",
+    desc: "Building end-to-end ML and deep learning pipelines from feature engineering to deployment — CNNs, transformers, and multimodal architectures.",
+    tags: ["PyTorch", "TensorFlow", "BERT", "ViT", "ResNet-50", "XGBoost"],
   },
   {
     num: "04", title: "Deployment",
-    desc: "Packaging ML models and agents as interactive web apps and APIs — from Hugging Face Spaces to Flask and FastAPI.",
-    tags: ["FastAPI", "Flask", "Streamlit", "Gradio", "HuggingFace Spaces"],
+    desc: "Packaging models and agents as APIs and web apps, with guardrails, structured output, and containerised delivery.",
+    tags: ["FastAPI", "Docker", "Flask", "Streamlit", "Gradio"],
   },
 ];
 

@@ -25,6 +25,13 @@ const allTech = [
   { name: "SQL", cat: "Database" },
   { name: "Power BI", cat: "Viz" },
   { name: "LSTM", cat: "Seq Models" },
+  { name: "Docker", cat: "Deploy" },
+  { name: "PostgreSQL", cat: "Database" },
+  { name: "LlamaParse", cat: "Doc AI" },
+  { name: "Whisper", cat: "Speech" },
+  { name: "Grad-CAM", cat: "XAI" },
+  { name: "BM25", cat: "Retrieval" },
+  { name: "Git", cat: "Tools" },
 ];
 
 const TechStack = () => {

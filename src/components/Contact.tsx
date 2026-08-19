@@ -4,7 +4,7 @@ import "./styles/Contact.css";
 const socials = [
   { label: "GitHub", href: "https://github.com/Khadeeja24" },
   { label: "LinkedIn", href: "https://linkedin.com/in/khadeeja2003" },
-  { label: "HuggingFace", href: "https://huggingface.co" },
+  { label: "HuggingFace", href: "https://huggingface.co/KhadeejaF" },
 ];
 
 const Contact = () => {

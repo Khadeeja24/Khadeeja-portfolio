@@ -1,30 +1,56 @@
 import { useRef, useEffect } from "react";
+import { MdArrowOutward } from "react-icons/md";
 import "./styles/Work.css";
 
 const projects = [
   {
     num: "01", year: "2026",
+    title: "MAAI-SkinDx — Multi-Agent Diagnosis",
+    cat: "Agentic AI · Healthcare · Explainable AI",
+    tools: "LangGraph · ReAct · ResNet-50 · Grad-CAM · Groq LLaMA",
+    icon: "🩺", color: "#ef4444",
+    note: "Research · code not public",
+  },
+  {
+    num: "02", year: "2026",
+    title: "Voice to SQL Assistant",
+    cat: "GenAI · Speech · Text-to-SQL",
+    tools: "Whisper · LangChain · Groq LLaMA · PostgreSQL · FastAPI",
+    icon: "🎙️", color: "#3b82f6",
+    github: "https://github.com/Khadeeja24/voice-to-sql-assistant",
+  },
+  {
+    num: "03", year: "2026",
+    title: "SHL Assessment Recommender",
+    cat: "GenAI · Retrieval · Conversational AI",
+    tools: "LangChain · Groq LLaMA 3.3 70B · BM25 · TF-IDF · Docker",
+    icon: "🎯", color: "#14b8a6",
+    github: "https://github.com/Khadeeja24/shl-recommender",
+  },
+  {
+    num: "04", year: "2026",
     title: "Multimodal Fake Review Detection",
     cat: "Deep Learning · NLP · Computer Vision",
     tools: "BERT · ViT · TensorFlow · GNN · HuggingFace",
     icon: "🔍", color: "#8b5cf6",
+    github: "https://github.com/Khadeeja24/FakeGuard-Multimodal-Fake-Review-Detection",
   },
   {
-    num: "02", year: "2026",
+    num: "05", year: "2026",
     title: "Conversational AI Lead Gen Agent",
     cat: "GenAI · LLMs · Agentic Systems",
     tools: "LangChain · LangGraph · FAISS · Flask · Groq",
     icon: "🤖", color: "#06b6d4",
   },
   {
-    num: "03", year: "2025",
+    num: "06", year: "2025",
     title: "Parkinson's Disease Detection",
     cat: "Healthcare AI · Multi-Model ML",
     tools: "XGBoost · ANN · Keras · SMOTE · Python",
     icon: "🧠", color: "#10b981",
   },
   {
-    num: "04", year: "2024",
+    num: "07", year: "2024",
     title: "Social Media & Mental Health Study",
     cat: "Statistics · Research",
     tools: "R · Hypothesis Testing · Chi-Square · Survey Design",
@@ -70,6 +96,22 @@ const Work = () => {
                 <h3 className="work-card-title">{p.title}</h3>
                 <p className="work-card-cat" style={{ color: p.color }}>{p.cat}</p>
                 <p className="work-card-tools">{p.tools}</p>
+                <div className="work-card-links">
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-card-link"
+                      style={{ borderColor: `${p.color}55`, color: p.color }}
+                      onClick={(e) => e.stopPropagation()}
+                      onMouseDown={(e) => e.stopPropagation()}
+                    >
+                      Code <MdArrowOutward size={13} />
+                    </a>
+                  )}
+                  {p.note && <span className="work-card-note">{p.note}</span>}
+                </div>
               </div>
             </div>
           ))}

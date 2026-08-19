@@ -31,9 +31,9 @@ const Landing = () => {
 
       <div className="landing-info">
         <p className="landing-role-label">A</p>
-        <h2 className="landing-role">Data Scientist</h2>
-        <p className="landing-role-sub">Research Intern</p>
-        <p className="landing-role-sub2">University of Galway, Ireland</p>
+        <h2 className="landing-role">Gen-AI Developer</h2>
+        <p className="landing-role-sub">AI Intern</p>
+        <p className="landing-role-sub2">Star Software · Ex-University of Galway</p>
       </div>
 
       <div className="scroll-hint">
